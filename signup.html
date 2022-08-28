@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp</title>
+
     <style>
         img{
             width: 40px;
@@ -19,16 +20,69 @@
             border:1px red solid;
         }
     </style>
+
+    <link rel="stylesheet" href="signup.css">
+
 </head>
 <body>
     <div id="formDiv">
         <img src="https://login.mailchimp.com/release/1.1.1a62ac527bc13f360d857039c1ac9f8c83ffbd1d9/images/brand_assets/logos/mc-freddie-dark.svg" width="40px" alt="">
         <div id="form">
             <form action="">
-                <label for="">Sign Up for MailChimp</label>
+
+                <!-- <label for="">Sign Up for MailChimp</label> -->
+
+                <span class="signup">Sign up for Mailchimp</span> <br>
+                <span>Create a free account or <a href="file:///C:/Users/91809/Desktop/mailchimp/red-machine-4582/login.html">Log in</a> </span>
+                <br>
+                <br> <br>
+                <label for="">Email</label> <br>
+                <input id="personEmail" type="text" placeholder="Enter Email">
+                <br>
+                <br> <br>
+                <label for="">Username</label>
+                <br>
+                <input id="personName" type="text" placeholder="Enter Username">
+                <br><br> <br>
+                <label for="">Password</label>
+                <br>
+                <input id="password" type="text" placeholder="Password">
+                <br> <br> <br>
+                <!-- <input class="checkbox" type="checkbox">
+                <label class="lea" for="">I dont want to recieve emails about mailchimp and related intuit product and feature updates, marketing best pra
+                    ctices, and promotion from mailchimp </label> -->
+                <!-- <button class="signupButton">Sign up</button> -->
+                
+                
+                <input class="signupButton" type="submit" value="sign up">
             </form>
         </div>
 
     </div>
 </body>
+
 </html>
+
+</html>
+
+<script>
+//    console.log(window.location.href)
+    
+    // let sd = document.getElementById(".form-example").value;
+    document.getElementById("form").addEventListener("submit",signFun);
+
+    function signFun(event){
+        event.preventDefault();
+        
+        let email = document.getElementById("personEmail").value;
+        
+        
+        let username = document.getElementById("personName").value;
+        let password = document.getElementById("password").value;
+        localStorage.setItem("email",(email))
+        localStorage.setItem('username',(username))
+        localStorage.setItem("password",(password))
+        window.location.href = "file:///C:/Users/91809/Desktop/mailchimp/red-machine-4582/welcome.html";
+    }
+</script>
+

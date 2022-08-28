@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div id="formDiv">
+        <img src="https://login.mailchimp.com/release/1.1.1a62ac527bc13f360d857039c1ac9f8c83ffbd1d9/images/brand_assets/logos/mc-freddie-dark.svg" width="40px" alt="">
+        <div id="form">
+            <form action="">
+                <span class="login">Log In </span> <br>
+                <span>Need a Mailchimp account?<a href="file:///C:/Users/91809/Desktop/mailchimp/red-machine-4582/signup.html">Create an account</a> </span>
+                
+                <br>
+                <br> <br>
+                <label for="">Username</label>
+                <br>
+                <input class="loginUserName" type="text" placeholder="Enter Username">
+                <br><br> <br>
+                <label for="">Password</label>
+                <br>
+                <input class="loginPassword" type="text" placeholder="Password">
+                <br> <br> <br>
+                <!-- <input class="checkbox" type="checkbox">
+                <label class="lea" for="">I dont want to recieve emails about mailchimp and related intuit product and feature updates, marketing best pra
+                    ctices, and promotion from mailchimp </label> -->
+                <!-- <button class="loginButton">Login</button> -->
+                <input class="loginButton" type="submit">
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
+
+<script>
+    // window.location.href = "file:///C:/Users/91809/Desktop/mailchimp/red-machine-4582/welcome.html"
+    // let email =(localStorage.getItem("email"))
+    let signupUsername =(localStorage.getItem('username'))
+    let signupPassword =(localStorage.getItem("password"))
+    if(signupUsername==null){
+        alert("please sign in")
+    }
+    document.getElementById("form").addEventListener("submit",loginFun)
+    
+    function loginFun(event){
+        // event.preventDefault();
+        event.preventDefault();
+        let loginUserName = document.querySelector(".loginUserName").value;
+        let loginPassword = document.querySelector(".loginPassword").value;
+         console.log(loginUserName)
+        if(signupUsername==loginUserName && signupPassword==loginPassword){
+            window.location.href = "file:///C:/Users/91809/Desktop/mailchimp/red-machine-4582/welcome.html"
+        }
+        else{
+            alert("Please enter correct information or signin first")
+        }
+        // console.log("check")
+
+    }
+</script>
